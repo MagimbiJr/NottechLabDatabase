@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.tana.nottechlab.NottechLabDBContract.MembersEntry;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -65,7 +66,7 @@ public class AddMemberActivity extends AppCompatActivity {
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveEmployee();
+                saveMember();
             }
         });
 
@@ -77,7 +78,7 @@ public class AddMemberActivity extends AppCompatActivity {
         });
     }
 
-    private void saveEmployee() {
+    private void saveMember() {
         boolean isValid = true;
 
         if (mFullName.getText().toString().isEmpty()) {
@@ -96,11 +97,11 @@ public class AddMemberActivity extends AppCompatActivity {
 
             SQLiteDatabase db = mDBHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put(NottechLabDBContract.MembersEntry.COLUMN_NAME, name);
-            values.put(NottechLabDBContract.MembersEntry.COLUMN_DESIGNATION, designation);
-            values.put(NottechLabDBContract.MembersEntry.COLUMN_DOB, dob);
+            values.put(MembersEntry.COLUMN_NAME, name);
+            values.put(MembersEntry.COLUMN_DESIGNATION, designation);
+            values.put(MembersEntry.COLUMN_DOB, dob);
 
-            long result = db.insert(NottechLabDBContract.MembersEntry.TABLE_NAME, null, values);
+            long result = db.insert(MembersEntry.TABLE_NAME, null, values);
             setResult(RESULT_OK, new Intent());
 
             Toast.makeText(getApplicationContext(), "Employee added", Toast.LENGTH_SHORT).show();
