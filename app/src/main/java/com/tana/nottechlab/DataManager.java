@@ -43,7 +43,7 @@ public  class DataManager {
          return employees;
     }
 
-    public static Members fetchEmployee(NottechLabDBHelper sqHelper, String empId) {
+    public static Members fetchMember(NottechLabDBHelper sqHelper, String empId) {
         SQLiteDatabase db = sqHelper.getReadableDatabase();
         Members member = null;
 
@@ -78,7 +78,7 @@ public  class DataManager {
         return member;
     }
 
-    public static void updateEmployee(NottechLabDBHelper sqHelper, Members member) {
+    public static void updateMember(NottechLabDBHelper sqHelper, Members member) {
         SQLiteDatabase db = sqHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();

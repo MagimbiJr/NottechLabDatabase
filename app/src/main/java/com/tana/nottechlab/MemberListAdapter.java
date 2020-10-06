@@ -1,6 +1,8 @@
 package com.tana.nottechlab;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,9 +69,9 @@ public class MemberListAdapter extends RecyclerView.Adapter<MemberListAdapter.Me
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Intent intent = new Intent(mContext, UpdateEmployeeActivity.class);
-                    //intent.putExtra(NottechLabDBContract.MembersEntry.COLUMN_ID, mMembers.get(mPos).getId());
-                    //((Activity) mContext).startActivityForResult(intent, 2);
+                    Intent intent = new Intent(mContext, UpdateMemberActivity.class);
+                    intent.putExtra(NottechLabDBContract.MembersEntry.COLUMN_ID, mMembers.get(mPos).getId());
+                    ((Activity) mContext).startActivityForResult(intent, 2);
                 }
             });
         }
