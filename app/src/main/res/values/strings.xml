@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NottechLab</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="name">Member\'s Full Name</string>
+    <string name="dob">DOB dd/mm/yyyy</string>
+    <string name="designation">Member\'s Designation</string>
+    <string name="full_name">Full Name</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete All</string>
 </resources>
