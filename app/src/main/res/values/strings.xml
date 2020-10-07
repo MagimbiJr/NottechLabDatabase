@@ -6,4 +6,6 @@
     <string name="dob">DOB dd/mm/yyyy</string>
     <string name="designation">Member\'s Designation</string>
     <string name="full_name">Full Name</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete All</string>
 </resources>

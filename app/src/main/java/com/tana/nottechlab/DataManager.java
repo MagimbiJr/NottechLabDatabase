@@ -93,7 +93,7 @@ public  class DataManager {
         db.update(MembersEntry.TABLE_NAME, values, selection, selectionArgs);
     }
 
-    public static int deleteEmployee(NottechLabDBHelper sqHelper, String empId) {
+    public static int deleteMember(NottechLabDBHelper sqHelper, String empId) {
         SQLiteDatabase db = sqHelper.getWritableDatabase();
 
         String selection = MembersEntry.COLUMN_ID + " LIKE ? ";
@@ -102,7 +102,7 @@ public  class DataManager {
         return db.delete(MembersEntry.TABLE_NAME, selection, selectionArgs);
     }
 
-    public static int deleteAllEmployee(NottechLabDBHelper sqHelper) {
+    public static int deleteAllMembers(NottechLabDBHelper sqHelper) {
         SQLiteDatabase db = sqHelper.getWritableDatabase();
         return db.delete(MembersEntry.TABLE_NAME, "1", null);
     }

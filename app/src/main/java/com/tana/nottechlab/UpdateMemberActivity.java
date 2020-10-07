@@ -1,5 +1,6 @@
 package com.tana.nottechlab;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,9 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -91,6 +95,29 @@ public class UpdateMemberActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_delete:
+                deleteItem();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void deleteItem() {
+        ItemDialog dialog = new ItemDialog();
+        dialog.show(getSupportFragmentManager(), "Item Dialog");
     }
 
     private void setUpCalendar(DatePickerDialog.OnDateSetListener date) {
